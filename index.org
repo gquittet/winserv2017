@@ -155,6 +155,13 @@ Pour la distribution des adresses, on doit donner une adresse en rapport avec le
   ipconfig /renew
 #+END_SRC
 
+** Problème
+*** DHCP ne fonctionne pas
+Sur notre serveur, on peut configurer le DHCP mais il ne fonctionne pas. La solution : 
+1. Se connecter en adminstrateur sur le DCRoot.
+2. Aller dans le DHCP Manager
+3. Clique droit sur le nom du serveur et faire "Authrorize".
+
 * DNS
 Pour éviter de devoir créer sur chaque DNS de chaque LAN les enregistrements de tous les pays, on va créer un redirecteur simple sur les DNS de chaque LAN.
 Ainsi, on va tout rediriger vers le DCRoot. La première fois, on va demander l'adresse IP au DCRoot et ensuite, le DNS va le stocker dans son cache.
