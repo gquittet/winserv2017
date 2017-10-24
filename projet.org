@@ -1,0 +1,194 @@
+#+TITLE: Projet Windows Server 2017
+#+AUTHOR: Guillaume Quittet
+#+DATE: Du 23 octobre 2017 au 27 octobre 2017
+#+LANGUAGE: fr
+#+OPTIONS: timestamp:nil
+
+* Tâches [2/5]
+- [X] Tous les groupes vont devoir installer la version 2012 R2 de Windows Server.
+- [X] Des étudiants vont devoir créer et configurer le réseau (BackBone).
+- [-] Réalisation d'un adressage IP correct et évolutif. [1/2]
+  - [X] IPv4
+  - [ ] IPv6
+- [-] 4 étudiants vont devoir configurer le DCRoot (ADDS, DNS, Sites et Services, etc) [2/3]
+  - [X] Installation ADDS
+  - [X] Configuration des sites et services
+  - [ ] Configuration du DNS
+- [-] Chaque LAN va devoir créer un DNS primaire et un DHCP. [1/3]
+  - [X] Chaque groupe va devoir posséder un ADDS.
+  - [-] Dans un LAN, le groupe impair va devoir créer et configurer un DNS primaire. [1/2]
+    - [X] Installation du DNS
+    - [ ] Configuration du DNS
+  - [-] Dans un LAN, le groupe pair va devoir créer et configurer le DHCP. [1/2]
+    - [X] Installation du DHCP
+    - [ ] Configuration du DHCP
+* Groupes
+| Numéro | LAN  | Pays       |
+|--------+------+------------|
+| <c>    | <c>  | <c>        |
+| 1      | LAN1 | Belgique   |
+| 2      | LAN1 | Pays-Bas   |
+| 3      | LAN2 | Espagne    |
+| 4      | LAN2 | Portugal   |
+| 5      | LAN3 | Allemagne  |
+| 6      | LAN3 | Autriche   |
+| 7      | LAN4 | France     |
+| 8      | LAN4 | Italie     |
+| 9      | LAN5 | Angleterre |
+| 10     | LAN5 | Irlande    |
+
+* Adressage IP
+Par LAN, il y a 1024 adresses. La dernière adresse disponible est l'adresse de passerelle.
+Le masque de sous-réseaux pour toutes les adresses IP est : */22* ou *255.255.252.0*
+** LAN1
+De *192.168.0.1* à *192.168.3.254*
+| Nom | Adresse IP  |
+| <c> | <c>         |
+|-----+-------------|
+| G1  | 192.168.0.1 |
+| G2  | 192.168.2.1 |
+** LAN2
+De *192.168.4.1* à *192.168.7.254*
+| Nom | Adresse IP  |
+| <c> | <c>         |
+|-----+-------------|
+| G3  | 192.168.4.1 |
+| G4  | 192.168.6.1 |
+** LAN3
+De *192.168.8.1* à *192.168.11.254*
+| Nom | Adresse IP   |
+| <c> | <c>          |
+|-----+--------------|
+| G5  | 192.168.8.1  |
+| G6  | 192.168.10.1 |
+
+** LAN4
+De *192.168.12.1* à *192.168.15.254*
+| Nom | Adresse IP   |
+| <c> | <c>          |
+|-----+--------------|
+| G7  | 192.168.12.1 |
+| G8  | 192.168.14.1 |
+** LAN5
+De *192.168.16.1* à *192.168.19.254*
+| Nom | Adresse IP   |
+| <c> | <c>          |
+|-----+--------------|
+| G9  | 192.168.16.1 |
+| G10 | 192.168.18.1 |
+** LAN6
+De *192.168.20.1* à *192.168.23.254*
+| Nom    | Adresse IP   |
+| <c>    | <c>          |
+|--------+--------------|
+| DCRoot | 192.168.20.1 |
+
+* Sites
+| Numéro | LAN  | Nom  |
+|--------+------+------|
+| <c>    | <c>  | <c>  |
+| 2      | LAN1 | BePa |
+| 3      | LAN2 | EsPo |
+| 4      | LAN3 | AlAu |
+| 5      | LAN4 | FrIt |
+| 6      | LAN5 | AnIr |
+| 1      | LAN6 | Eu   |
+* DCRoot
+** Compte Administrator
+*** Mot de passe
+3Dy7!1@7i&n#0JUg
+** ADDS
+*** Forêt
+EUROPE.LAN
+*** NetBIOS
+EUROPE
+*** Mot de passe
+Test123*
+** Adressage IP
+*** IP
+192.168.20.1
+*** Masque
+/22 = 255.255.252.0
+*** Passerelle
+192.168.23.254
+** DNS
+Les 2 zones doivent être intégrée à l'Active Directory
+*** Forward Lookup Zone
+| <c>    | <c>          |
+| Nom    | IP           |
+|--------+--------------|
+| dcroot | 192.168.20.1 |
+
+*** Reverse Lookup Zone
+| <c>          | <c>    |
+| IP           | Nom    |
+|--------------+--------|
+| 192.168.20.1 | dcroot |
+
+* BackBone
+** Routeurs
+*** Mots de passe
+| <c>       | <c>              |
+| Routeurs  | Mot de passe     |
+|-----------+------------------|
+| Routeur 1 | 5i*70Kklj*Ei19Go |
+| Routeur 2 | k21!Z4enDQZY&pN4 |
+| Routeur 3 | 1i1%W7F@y#lfo90L |
+*** Configurations
+**** Routeur 1
+**** Routeur 2
+**** Routeur 3
+
+* Serveurs
+** Convention de nommage
+Les noms des serveurs correpondent à SRV-CAPITALE. On doit donc écrire SRV suivit du nom de la capitale du pays en lettre majuscule.
+
+* DHCP
+Pour la distribution des adresses, on doit donner une adresse en rapport avec le pays. Par exemple, si l'utilisateur se trouve en Belgique, son IP fera partie de *192.168.0.3* à *192.168.3.253*
+
+** Manipulation qui permet de donner le bon Range IP
+- Créer un scope pour tout le monde
+- Créer une "Policy User Class" avec un nom pour le range du groupe du DHCP
+- Créer une GPO dans l'AD pour lancer un script à la connexion d'un utilisateur du groupe DHCP :
+#+BEGIN_SRC shell
+  ipconfig /setclassid nom_de_user_class
+  ipconfig /renew
+#+END_SRC
+
+* DNS
+Pour éviter de devoir créer sur chaque DNS de chaque LAN les enregistrements de tous les pays, on va créer un redirecteur simple sur les DNS de chaque LAN.
+Ainsi, on va tout rediriger vers le DCRoot. La première fois, on va demander l'adresse IP au DCRoot et ensuite, le DNS va le stocker dans son cache.
+
+** Configuration DNS de chaque machine
+
+*** Si la machine est le DNS
+| <c>         | <c>               |
+| Type de DNS | Adresse IP        |
+|-------------+-------------------|
+| Primaire    | 127.0.0.1         |
+| Secondaire  | Adresse du DCRoot |
+
+*** Si la machine est le DHCP
+| <c>         | <c>                   |
+| Type de DNS | Adresse IP            |
+|-------------+-----------------------|
+| Primaire    | Adresse du DNS du LAN |
+| Secondaire  | Adresse du DCRoot     |
+
+* LAN3
+** Groupe 5 (DNS)
+*** Membres
+Florian Di Vrusa et Guillaume Quittet
+*** Nom du serveur
+SRV-BERLIN
+*** Administrateur
+| <c>               | <c>              |
+| Nom d'utilisateur | Mot de passe     |
+|-------------------+------------------|
+| Administrator     | T8ha6&X21ANtFu4g |
+
+** Groupe 6 (DHCP)
+*** Membres
+Killian Kuppens et Julien Mougenot
+*** Nom du serveur
+SRV-VIENNE
