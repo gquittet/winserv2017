@@ -162,11 +162,11 @@ Ainsi, on va tout rediriger vers le DCRoot. La première fois, on va demander l'
 ** Configuration DNS de chaque machine
 
 *** Si la machine est le DNS
-| <c>         | <c>               |
-| Type de DNS | Adresse IP        |
-|-------------+-------------------|
-| Primaire    | 127.0.0.1         |
-| Secondaire  | Adresse du DCRoot |
+| <c>         | <c>                   |
+| Type de DNS | Adresse IP            |
+|-------------+-----------------------|
+| Primaire    | Adresse du DNS du LAN |
+| Secondaire  | 127.0.0.1             |
 
 *** Si la machine est le DHCP
 | <c>         | <c>                   |
