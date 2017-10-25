@@ -807,7 +807,6 @@ De <b>192.168.20.1</b> à <b>192.168.23.254</b>
 </div>
 </div>
 
-
 <div id="outline-container-sec-4" class="outline-2">
 <h2 id="sec-4"><span class="section-number-2">4</span> Sites</h2>
 <div class="outline-text-2" id="text-4">
@@ -909,6 +908,23 @@ EUROPE
 Test123*
 </p>
 </div>
+</div>
+<div id="outline-container-sec-5-2-4" class="outline-4">
+<h4 id="sec-5-2-4"><span class="section-number-4">5.2.4</span> Réplication</h4>
+<div class="outline-text-4" id="text-5-2-4">
+<p>
+L'Active Directory se réplique toutes les heures mais pas sur tous les LANs.
+Les LANs <b>LAN1</b> et <b>LAN3</b> reçoivent la mise à jour toutes les 2 heures, la première heure.
+Les LANs <b>LAN2</b> et <b>LAN4</b> reçoivent la mise à jour toutes les 2 heures, la deuxième heure.
+Quant au LANs <b>LAN5</b> et <b>LAN6</b>, ils font la réplications toutes les heures.
+</p>
+</div>
+<ol class="org-ol"><li><a id="sec-5-2-4-1" name="sec-5-2-4-1"></a>Problème<br ><div class="outline-text-5" id="text-5-2-4-1">
+<p>
+Ce système de réplication engorge le réseau. Malheureusement, pour l'instant, nous n'avons pas le choix si on veut que tout le monde soit en ordre.
+</p>
+</div>
+</li></ol>
 </div>
 </div>
 <div id="outline-container-sec-5-3" class="outline-3">
@@ -1044,6 +1060,7 @@ Les 2 zones doivent être intégrée à l'Active Directory
 </table>
 </div>
 </div>
+
 <div id="outline-container-sec-6-1-2" class="outline-4">
 <h4 id="sec-6-1-2"><span class="section-number-4">6.1.2</span> Configurations</h4>
 <div class="outline-text-4" id="text-6-1-2">

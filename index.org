@@ -133,7 +133,6 @@ De *192.168.20.1* à *192.168.23.254*
 |--------+-----------------------+-----------------------|
 | DCRoot | FD00:DB8:CAFE:6::0001 | FD00:DB8:CAFE:6::FFFF |
 
-
 * Sites
 | Numéro | LAN  | Nom  |
 |--------+------+------|
@@ -155,6 +154,13 @@ EUROPE.LAN
 EUROPE
 *** Mot de passe
 Test123*
+*** Réplication
+L'Active Directory se réplique toutes les heures mais pas sur tous les LANs.
+Les LANs *LAN1* et *LAN3* reçoivent la mise à jour toutes les 2 heures, la première heure.
+Les LANs *LAN2* et *LAN4* reçoivent la mise à jour toutes les 2 heures, la deuxième heure.
+Quant au LANs *LAN5* et *LAN6*, ils font la réplications toutes les heures.
+**** Problème
+Ce système de réplication engorge le réseau. Malheureusement, pour l'instant, nous n'avons pas le choix si on veut que tout le monde soit en ordre.
 ** Adressage IP
 *** IP
 192.168.20.1
@@ -185,6 +191,7 @@ Les 2 zones doivent être intégrée à l'Active Directory
 | Routeur 1 | 5i*70Kklj*Ei19Go |
 | Routeur 2 | k21!Z4enDQZY&pN4 |
 | Routeur 3 | 1i1%W7F@y#lfo90L |
+
 *** Configurations
 **** Routeur 1
 **** Routeur 2
