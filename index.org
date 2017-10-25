@@ -30,7 +30,7 @@
 | 2      | LAN1 | Pays-Bas   |
 | 3      | LAN2 | Espagne    |
 | 4      | LAN2 | Portugal   |
-| 5      | LAN3 | Allemagne  |
+| 5      | LAN3 | Pologne    |
 | 6      | LAN3 | Autriche   |
 | 7      | LAN4 | France     |
 | 8      | LAN4 | Italie     |
@@ -43,7 +43,7 @@ Le masque de sous-réseaux pour toutes les adresses IPv4 est : */22* ou *255.255
 Le préfix de toutes les adresses IPv6 est : */64*.
 ** LAN1
 *** IPv4
-De *192.168.0.1* à *192.168.3.254*
+De *192.168.0.2* à *192.168.3.254*
 | Groupe | Adresse IP  |
 | <c>    | <c>         |
 |--------+-------------|
@@ -73,11 +73,11 @@ De *192.168.4.1* à *192.168.7.254*
 
 ** LAN3
 *** IPv4
-De *192.168.8.1* à *192.168.11.254*
+De *192.168.8.2* à *192.168.11.254*
 | Groupe | Adresse IP   |
 | <c>    | <c>          |
 |--------+--------------|
-| G5     | 192.168.8.1  |
+| G5     | 192.168.8.2  |
 | G6     | 192.168.10.1 |
 
 *** IPv6
@@ -213,6 +213,7 @@ Pour la distribution des adresses, on doit donner une adresse en rapport avec le
   # Si la précédente ne fonctionne pas
   netsh interface ipv4 show interfaces
   ipconfig /setclassid "Nom retourné par la commande précédente" nom_de_user_class
+  # A faire pour les 2 commandes
   ipconfig /renew
 #+END_SRC
 
@@ -248,12 +249,12 @@ Ainsi, on va tout rediriger vers le DCRoot. La première fois, on va demander l'
 *** Membres
 Florian Di Vrusa et Guillaume Quittet
 *** Nom du serveur
-SRV-BERLIN
+SRV-VARSOVIE
 *** Administrateur
-| <c>               | <c>              |
-| Nom d'utilisateur | Mot de passe     |
-|-------------------+------------------|
-| Administrator     | T8ha6&X21ANtFu4g |
+| <c>               | <c>          |
+| Nom d'utilisateur | Mot de passe |
+|-------------------+--------------|
+| Administrator     | Test123*     |
 
 ** Groupe 6 (DHCP)
 *** Membres
