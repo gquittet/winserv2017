@@ -1106,6 +1106,9 @@ Pour la distribution des adresses, on doit donner une adresse en rapport avec le
 <div class="org-src-container">
 
 <pre class="src src-shell">ipconfig /setclassid nom_de_user_class
+<span style="color: #6272a4;"># </span><span style="color: #6272a4;">Si la pr&#233;c&#233;dente ne fonctionne pas</span>
+netsh interface ipv4 show interfaces
+ipconfig /setclassid <span style="color: #f1fa8c;">"Nom retourn&#233; par la commande pr&#233;c&#233;dente"</span> nom_de_user_class
 ipconfig /renew
 </pre>
 </div>

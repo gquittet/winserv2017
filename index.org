@@ -210,6 +210,9 @@ Pour la distribution des adresses, on doit donner une adresse en rapport avec le
 - Créer une GPO dans l'AD pour lancer un script à la connexion d'un utilisateur du groupe DHCP :
 #+BEGIN_SRC shell
   ipconfig /setclassid nom_de_user_class
+  # Si la précédente ne fonctionne pas
+  netsh interface ipv4 show interfaces
+  ipconfig /setclassid "Nom retourné par la commande précédente" nom_de_user_class
   ipconfig /renew
 #+END_SRC
 
