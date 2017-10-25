@@ -39,49 +39,100 @@
 
 * Adressage IP
 Par LAN, il y a 1024 adresses. La dernière adresse disponible est l'adresse de passerelle.
-Le masque de sous-réseaux pour toutes les adresses IP est : */22* ou *255.255.252.0*
+Le masque de sous-réseaux pour toutes les adresses IPv4 est : */22* ou *255.255.252.0*
+Le préfix de toutes les adresses IPv6 est : */64*
 ** LAN1
+*** IPv4
 De *192.168.0.1* à *192.168.3.254*
-| Nom | Adresse IP  |
-| <c> | <c>         |
-|-----+-------------|
-| G1  | 192.168.0.1 |
-| G2  | 192.168.2.1 |
+| Groupe | Adresse IP  |
+| <c>    | <c>         |
+|--------+-------------|
+| G1     | 192.168.0.1 |
+| G2     | 192.168.2.1 |
+*** IPv6
+| <c>    | <c>                   | <c>                   | <c>                   |
+| Groupe | Première adresse      | Dernière adresse      | Passerelle par défaut |
+|--------+-----------------------+-----------------------+-----------------------|
+| G1     | FD00:DB8:CAFE:1::0001 | FD00:DB8:CAFE:1::0999 | FD00:DB8:CAFE:1::FFFF |
+| G2     | FD00:DB8:CAFE:1::1001 | FD00:DB8:CAFE:1::1999 | FD00:DB8:CAFE:1::FFFF |
+
 ** LAN2
+*** IPv4
 De *192.168.4.1* à *192.168.7.254*
-| Nom | Adresse IP  |
-| <c> | <c>         |
-|-----+-------------|
-| G3  | 192.168.4.1 |
-| G4  | 192.168.6.1 |
+| Groupe | Adresse IP  |
+| <c>    | <c>         |
+|--------+-------------|
+| G3     | 192.168.4.1 |
+| G4     | 192.168.6.1 |
+*** IPv6
+| <c>    | <c>                   | <c>                   | <c>                   |
+| Groupe | Première adresse      | Dernière adresse      | Passerelle par défaut |
+|--------+-----------------------+-----------------------+-----------------------|
+| G3     | FD00:DB8:CAFE:2::0001 | FD00:DB8:CAFE:2::0999 | FD00:DB8:CAFE:2::FFFF |
+| G4     | FD00:DB8:CAFE:2::1001 | FD00:DB8:CAFE:2::1999 | FD00:DB8:CAFE:2::FFFF |
+
 ** LAN3
+*** IPv4
 De *192.168.8.1* à *192.168.11.254*
-| Nom | Adresse IP   |
-| <c> | <c>          |
-|-----+--------------|
-| G5  | 192.168.8.1  |
-| G6  | 192.168.10.1 |
+| Groupe | Adresse IP   |
+| <c>    | <c>          |
+|--------+--------------|
+| G5     | 192.168.8.1  |
+| G6     | 192.168.10.1 |
+
+*** IPv6
+| <c>    | <c>                   | <c>                   | <c>                   |
+| Groupe | Première adresse      | Dernière adresse      | Passerelle par défaut |
+|--------+-----------------------+-----------------------+-----------------------|
+| G5     | FD00:DB8:CAFE:3::0001 | FD00:DB8:CAFE:3::0999 | FD00:DB8:CAFE:3::FFFF |
+| G6     | FD00:DB8:CAFE:3::1001 | FD00:DB8:CAFE:3::1999 | FD00:DB8:CAFE:3::FFFF |
 
 ** LAN4
+*** IPVv4
 De *192.168.12.1* à *192.168.15.254*
-| Nom | Adresse IP   |
-| <c> | <c>          |
-|-----+--------------|
-| G7  | 192.168.12.1 |
-| G8  | 192.168.14.1 |
+| Groupe | Adresse IP   |
+| <c>    | <c>          |
+|--------+--------------|
+| G7     | 192.168.12.1 |
+| G8     | 192.168.14.1 |
+
+*** IPv6
+| <c>    | <c>                   | <c>                   | <c>                   |
+| Groupe | Première adresse      | Dernière adresse      | Passerelle par défaut |
+|--------+-----------------------+-----------------------+-----------------------|
+| G7     | FD00:DB8:CAFE:4::0001 | FD00:DB8:CAFE:4::0999 | FD00:DB8:CAFE:4::FFFF |
+| G8     | FD00:DB8:CAFE:4::1001 | FD00:DB8:CAFE:4::1999 | FD00:DB8:CAFE:4::FFFF |
+
 ** LAN5
+*** IPv4
 De *192.168.16.1* à *192.168.19.254*
-| Nom | Adresse IP   |
-| <c> | <c>          |
-|-----+--------------|
-| G9  | 192.168.16.1 |
-| G10 | 192.168.18.1 |
+| Groupe | Adresse IP   |
+| <c>    | <c>          |
+|--------+--------------|
+| G9     | 192.168.16.1 |
+| G10    | 192.168.18.1 |
+
+*** IPv6 
+| <c>    | <c>                   | <c>                   | <c>                   |
+| Groupe | Première adresse      | Dernière adresse      | Passerelle par défaut |
+|--------+-----------------------+-----------------------+-----------------------|
+| G9     | FD00:DB8:CAFE:5::0001 | FD00:DB8:CAFE:5::0999 | FD00:DB8:CAFE:5::FFFF |
+| G10    | FD00:DB8:CAFE:5::1001 | FD00:DB8:CAFE:5::1999 | FD00:DB8:CAFE:5::FFFF |
+
 ** LAN6
+*** IPv4
 De *192.168.20.1* à *192.168.23.254*
-| Nom    | Adresse IP   |
+| Groupe | Adresse IP   |
 | <c>    | <c>          |
 |--------+--------------|
 | DCRoot | 192.168.20.1 |
+
+*** IPv6 
+| <c>    | <c>                   | <c>                   |
+| Groupe | Adresse IP            | Passerelle par défaut |
+|--------+-----------------------+-----------------------|
+| DCRoot | FD00:DB8:CAFE:6::0001 | FD00:DB8:CAFE:6::FFFF |
+
 
 * Sites
 | Numéro | LAN  | Nom  |
