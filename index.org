@@ -39,8 +39,8 @@
 
 * Adressage IP
 Par LAN, il y a 1024 adresses. La dernière adresse disponible est l'adresse de passerelle.
-Le masque de sous-réseaux pour toutes les adresses IPv4 est : */22* ou *255.255.252.0*
-Le préfix de toutes les adresses IPv6 est : */64*
+Le masque de sous-réseaux pour toutes les adresses IPv4 est : */22* ou *255.255.252.0*.
+Le préfix de toutes les adresses IPv6 est : */64*.
 ** LAN1
 *** IPv4
 De *192.168.0.1* à *192.168.3.254*
