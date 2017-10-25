@@ -38,8 +38,8 @@
 | 10     | LAN5 | Irlande    |
 
 * Adressage IP
-Par LAN, il y a 1024 adresses. La dernière adresse disponible est l'adresse de passerelle.
-Le masque de sous-réseaux pour toutes les adresses IPv4 est : */22* ou *255.255.252.0*.
+Par LAN, il y a 1024 adresses. La dernière adresse disponible est l'adresse de passerelle.\\
+Le masque de sous-réseaux pour toutes les adresses IPv4 est : */22* ou *255.255.252.0*.\\
 Le préfix de toutes les adresses IPv6 est : */64*.
 ** LAN1
 *** IPv4
@@ -155,9 +155,9 @@ EUROPE
 *** Mot de passe
 Test123*
 *** Réplication
-L'Active Directory se réplique toutes les heures mais pas sur tous les LANs.
-Les LANs *LAN1* et *LAN3* reçoivent la mise à jour toutes les 2 heures, la première heure.
-Les LANs *LAN2* et *LAN4* reçoivent la mise à jour toutes les 2 heures, la deuxième heure.
+L'Active Directory se réplique toutes les heures mais pas sur tous les LANs.\\
+Les LANs *LAN1* et *LAN3* reçoivent la mise à jour toutes les 2 heures, la première heure.\\
+Les LANs *LAN2* et *LAN4* reçoivent la mise à jour toutes les 2 heures, la deuxième heure.\\
 Quant au LANs *LAN5* et *LAN6*, ils font la réplications toutes les heures.
 **** Problème
 Ce système de réplication engorge le réseau. Malheureusement, pour l'instant, nous n'avons pas le choix si on veut que tout le monde soit en ordre.
