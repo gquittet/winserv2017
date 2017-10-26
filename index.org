@@ -33,7 +33,7 @@
 | 5      | LAN3 | Pologne    |
 | 6      | LAN3 | Autriche   |
 | 7      | LAN4 | France     |
-| 8      | LAN4 | Italie     |
+| 8      | LAN4 | Dunkerque  |
 | 9      | LAN5 | Angleterre |
 | 10     | LAN5 | Irlande    |
 
@@ -94,7 +94,7 @@ De *192.168.12.1* à *192.168.15.254*
 | <c>    | <c>          |
 |--------+--------------|
 | G7     | 192.168.12.1 |
-| G8     | 192.168.14.1 |
+| G8     | 192.168.14.2 |
 
 *** IPv6
 | <c>    | <c>                   | <c>                   | <c>                   |
