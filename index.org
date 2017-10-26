@@ -255,6 +255,27 @@ SRV-VARSOVIE
 | Nom d'utilisateur | Mot de passe |
 |-------------------+--------------|
 | Administrator     | Test123*     |
+*** Responsables par département
+| <c>               | <c>                 |
+| Nom d'utilisateur | Département         |
+|-------------------+---------------------|
+| balci.dorcas      | Commerciaux         |
+| camvier.adriano   | Commerciaux         |
+| arfaras.nicolas   | Finances            |
+| dewulf.walter     | Finances            |
+| celenza.raphael   | Informatique        |
+| aimant.rayan      | Informatique        |
+| dhont.françois    | Informatique        |
+| cornil.lorient    | Marketing           |
+| colpin.loïc       | Marketing           |
+| aubly.vincent     | Marketing           |
+| veys.cyril        | Marketing           |
+| casier.julien     | R&D                 |
+| sadki.loris       | R&D                 |
+| duez.andrew       | Ressources Humaines |
+| marcel.romain     | Ressources Humaines |
+| alaca.ruben       | Technique           |
+| chif.logan        | Technique           |
 
 ** Groupe 6 (DHCP)
 *** Membres
